@@ -35,8 +35,8 @@ versions.each do |version|
 class TypesenseServerAT#{version.gsub('.', '')} < Formula
   desc "Search Engine; Open Source, Lightning fast, In-Memory, Typo Tolerant"
   homepage "https://typesense.org"
+  url "#{file_download_url}"  
   version "#{version}"
-  url "#{file_download_url}"
   sha256 "#{file_sha256.strip}"
   license "GPL-3.0"
 
