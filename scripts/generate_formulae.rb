@@ -43,6 +43,11 @@ class TypesenseServerAT#{version.gsub('.', '')} < Formula
   def install
     bin.install "typesense-server"
   end
+
+  test do
+    output = shell_output("\#{bin}/typesense-server 2>&1", 1)
+    assert_match "Command line usage: ./typesense-server", output
+  end
 end
 EOFORMULA
 
