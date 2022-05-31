@@ -33,5 +33,6 @@ This section is only applicable if you're adding a new version to this tap.
 
 To add a new version:
 
-1. Add it to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
+0. `brew install curl sha2` (curl is keg-only, so make sure it is available in `PATH` following the post-install instructions)
+1. Add new version to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
 2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb`
