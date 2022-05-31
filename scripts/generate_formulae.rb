@@ -38,6 +38,6 @@ EOFORMULA
 end
 
 puts "Updating symlink for typesense-server to point to #{versions.first}"
-`ln -sf Formula/typesense-server@#{versions.first}.rb Aliases/typesense-server`
+`ln -sf ../Formula/typesense-server@#{versions.first}.rb Aliases/typesense-server`
 
 puts "Done"
