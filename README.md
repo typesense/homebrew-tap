@@ -31,8 +31,12 @@ For Typesense docs:
 
 This section is only applicable if you're adding a new version to this tap.
 
-To add a new version:
+### Dependencies
 
-0. `brew install curl sha2` (curl is keg-only, so make sure it is available in `PATH` following the post-install instructions)
+`brew install curl sha2` (curl is keg-only, so make sure it is available in `PATH` following the post-install instructions)
+
+### Add a new version
+
 1. Add new version to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
-2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb`
+2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb` to generate the formulae for all versions
+3. Run `brew style . --fix` (then make sure any linting fixes are applied to the template string, then regenerate the formula once again)
