@@ -29,11 +29,9 @@ For Typesense docs:
 
 ## Developer Workflow
 
-This section is only if you're adding a new version to this tap.
+This section is only applicable if you're adding a new version to this tap.
 
-For eg, to add a new version 0.23.0, when the current version is 0.22.2:
+To add a new version:
 
-1. Copy `Formula/typesense-server@0.22.2.rb` to a new file `Formula/typesense-server@0.23.0`.
-2. Update the class name in `Formula/typesense-server@0.23.0` to `TypesenseServerAT0230`
-3. Update the version number and SHA in `Formula/typesense-server@0.23.0`
-4. Update `Aliases/typesense-server` symlink to point to `../Formula/typesense-server@0.23.0`
+1. Add it to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
+2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb`
