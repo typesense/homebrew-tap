@@ -1,4 +1,4 @@
-class TypesenseServer < Formula
+class TypesenseServerAT02222 < Formula
   desc "Search Engine; Open Source, Lightning fast, In-Memory, Typo Tolerant"
   homepage "https://typesense.org"
   version "0.22.2"
