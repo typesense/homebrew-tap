@@ -46,10 +46,10 @@ versions.each do |version|
 
       def install
         bin.install "typesense-server"
-    
+
         # Create directories
         [data_dir, config_dir, log_dir].each(&:mkpath)
-    
+
         # Create default config file
         config_file_contents = <<~EOF
           [server]
@@ -63,7 +63,7 @@ versions.each do |version|
         system "echo '\#{config_file_contents}' > \#{buildpath/"typesense.ini"}"
         config_dir.install "typesense.ini"
       end
-    
+
       service do
         run [bin/"typesense-server", "--config=\#{etc/"typesense/typesense.ini"}"]
         keep_alive true
@@ -71,15 +71,15 @@ versions.each do |version|
         log_path var/"log/typesense.log"
         working_dir var/"lib/typesense"
       end
-    
+
       def config_dir
         etc/"typesense"
       end
-    
+
       def data_dir
         var/"lib/typesense"
       end
-    
+
       def log_dir
         var/"log/typesense"
       end
