@@ -4,13 +4,13 @@ This repo contains Typesense's Homebrew Tap.
 
 ## Installation
 
-To install the latest version:
+To install the latest version of Typesense:
 
 ```
 brew install typesense/tap/typesense-server
 ```
 
-To install a specific version:
+To install a specific version of Typesense:
 
 ```
 brew install typesense/tap/typesense-server@0.22.2
@@ -25,11 +25,10 @@ For brew docs: `brew help`, `man brew` or check [Homebrew's documentation](https
 - Configuration files are under: `${HOMEBREW_PREFIX}/etc/typesense/`
 - Logs are under: `${HOMEBREW_PREFIX}/var/log/typesense/`
 - Data dir is under: `${HOMEBREW_PREFIX}/var/lib/typesense/`
+- The default admin api-key is `xyz`.
+- The default API port is `8108`
 
 where `${HOMEBREW_PREFIX}` is usually `/usr/local`.
-
-The default admin api-key is `xyz`.
-You can change this in `${HOMEBREW_PREFIX}/etc/typesense/typesense.ini` and restart the service.
 
 ### Start service
 
@@ -38,6 +37,17 @@ To start the `typesense-server` service:
 ```
 brew services start typesense-server
 ```
+
+Now check the health of the server:
+
+```
+curl http://localhost:8108/health
+{"ok":true}
+```
+
+If you don't see `{"ok": true}`, check the logs under `${HOMEBREW_PREFIX}/var/log/typesense/` for any issues or progress.
+
+`${HOMEBREW_PREFIX}` is usually `/usr/local`.
 
 ### Restart service
 
@@ -68,7 +78,7 @@ typesense-server --api-key=xyz --data-dir=./typesense-data
 
 For Typesense docs, see: [https://typesense.org/docs/api/](https://typesense.org/docs/api/)
 
-## Developer Workflow
+## Tap Developer Workflow
 
 This section is only applicable if you're adding a new version to this tap.
 
