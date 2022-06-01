@@ -18,12 +18,24 @@ class TypesenseServerAT0200 < Formula
       api-address = 0.0.0.0
       api-port = 8108
       api-key = xyz
-      data-dir = #{var}/lib/typesense
-      log-dir = #{var}/log/typesense
+      data-dir = #{data_dir}
+      log-dir = #{log_dir}
       enable-cors = true
     EOF
     system "echo '#{config_file_contents}' > #{buildpath/"typesense.ini"}"
     config_dir.install "typesense.ini"
+  end
+
+  def caveats
+    <<~EOS
+      * The default admin API key is xyz
+        The default API port is 8108
+            You can change these and other configuration by editing #{config_dir/"typesense.ini"}
+      * Logs are under: #{log_dir}
+      * Data dir is under: #{data_dir}
+      * To test that Typesense is running, try
+            curl http://localhost:8108/health
+    EOS
   end
 
   service do
