@@ -1,8 +1,10 @@
+# typed: false
 # frozen_string_literal: true
 
 require "English"
 
 versions = %w[
+  0.23.1
   0.23.0
   0.22.2
   0.22.1
