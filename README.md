@@ -91,4 +91,4 @@ This section is only applicable if you're adding a new version to this tap.
 1. Add new version to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
 2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb` to generate the formulae for all versions
 3. Run `brew style . --fix` (then make sure any linting fixes are applied to the template string, then regenerate the formula once again)
-4. Test locally `brew install ./Formula/typesense-server@0.23.1.rb --debug`
+4. Test locally `brew install ./Formula/typesense-server@0.24.0.rb --debug`
