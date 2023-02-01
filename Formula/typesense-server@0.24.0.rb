@@ -3,7 +3,7 @@ class TypesenseServerAT0240 < Formula
   homepage "https://typesense.org"
   url "https://dl.typesense.org/releases/0.24.0/typesense-server-0.24.0-darwin-amd64.tar.gz"
   version "0.24.0"
-  sha256 "1f59c281afe88f3d34511613082547bf2201b0710a0d538152a3391ca99434ec"
+  sha256 "396b3f876648cd35cd0c9ee29f5f6be90e18a4ca4e40d0e91640afa29220c6b9"
   license "GPL-3.0"
 
   def install
