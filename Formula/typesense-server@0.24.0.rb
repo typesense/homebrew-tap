@@ -27,7 +27,7 @@ class TypesenseServerAT0240 < Formula
   end
 
   def caveats
-    <<~EOS
+    msg = <<~EOS
       * The default admin API key is xyz
         The default API port is 8108
             You can change these and other configuration by editing #{config_dir/"typesense.ini"}
@@ -36,10 +36,35 @@ class TypesenseServerAT0240 < Formula
       * To test that Typesense is running, try
             curl http://localhost:8108/health
     EOS
+
+    if OS.mac?
+      if Hardware::CPU.intel? && MacOS.version < :ventura
+        msg = <<~EOS
+          #{msg}
+          *************************************************************************************************
+          * NOTE: The macOS Intel build of Typesense is only supported on macOS Venture (13.x) or above.
+          *  For other macOS versions, please use the Docker installation method described here:
+          *    https://typesense.org/docs/guide/install-typesense.html#docker
+          *************************************************************************************************
+        EOS
+      elsif Hardware::CPU.arm?
+        msg = <<~EOS
+          #{msg}
+          ************************************************************************************************************
+          * NOTE: The macOS build of Typesense is only supported natively on Apple machines with Intel CPUs.
+          *  If you run this build on Apple M1/M2, macOS will use Rosetta which will affect Typesense's performance.
+          *  For Apple M1/M2 machines, please use the Docker installation method described here:
+          *     https://typesense.org/docs/guide/install-typesense.html#docker
+          ************************************************************************************************************
+        EOS
+      end
+    end
+
+    msg
   end
 
   service do
-    run [bin/"typesense-server", "--config=#{etc/"typesense/typesense.ini"}"]
+    run [opt_bin/"typesense-server", "--config=#{etc/"typesense/typesense.ini"}"]
     keep_alive true
     error_log_path var/"log/typesense.log"
     log_path var/"log/typesense.log"
