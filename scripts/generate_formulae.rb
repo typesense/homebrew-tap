@@ -4,6 +4,8 @@
 require "English"
 
 versions = %w[
+  0.25.2
+  0.25.1
   0.25.0
   0.24.1
   0.24.0
@@ -81,7 +83,7 @@ versions.each do |version|
                 curl http://localhost:8108/health
         EOS
 
-        if OS.mac?
+        on_macos do
           if Hardware::CPU.intel? && MacOS.version < :ventura
             msg = <<~EOS
               \#{msg}

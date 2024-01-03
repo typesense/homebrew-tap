@@ -37,7 +37,7 @@ class TypesenseServerAT0150 < Formula
             curl http://localhost:8108/health
     EOS
 
-    if OS.mac?
+    on_macos do
       if Hardware::CPU.intel? && MacOS.version < :ventura
         msg = <<~EOS
           #{msg}

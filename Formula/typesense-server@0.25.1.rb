@@ -1,9 +1,9 @@
-class TypesenseServerAT0220 < Formula
+class TypesenseServerAT0251 < Formula
   desc "Search Engine; Open Source, Lightning fast, In-Memory, Typo Tolerant"
   homepage "https://typesense.org"
-  url "https://dl.typesense.org/releases/0.22.0/typesense-server-0.22.0-darwin-amd64.tar.gz"
-  version "0.22.0"
-  sha256 "820bf71370f694d8478b15a5b23c00652cd05a0daf62d2f8094c2093083bfc51"
+  url "https://dl.typesense.org/releases/0.25.1/typesense-server-0.25.1-darwin-amd64.tar.gz"
+  version "0.25.1"
+  sha256 "cf3f0639bb630e0316c781c3730ba0316792fe7e34ff58cfc0dffcad721be7ef"
   license "GPL-3.0"
 
   def install
