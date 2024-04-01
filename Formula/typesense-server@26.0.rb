@@ -1,10 +1,16 @@
 class TypesenseServerAT260 < Formula
   desc "Search Engine; Open Source, Lightning fast, In-Memory, Typo Tolerant"
   homepage "https://typesense.org"
-  url "https://dl.typesense.org/releases/26.0/typesense-server-26.0-darwin-amd64.tar.gz"
   version "26.0"
-  sha256 "1645a27ba0e02218288eb9f8f2bb7dfc64f42e6bbb8edef8ab6af3c35308d96b"
   license "GPL-3.0"
+
+  if Hardware::CPU.arm?
+    url "https://dl.typesense.org/releases/26.0/typesense-server-26.0-darwin-arm64.tar.gz"
+    sha256 "7a3c3c07e0e6090b3a7144a22ee798f6d49d5a7ac5485bcb312dfa538faff0de"
+  else
+    url "https://dl.typesense.org/releases/26.0/typesense-server-26.0-darwin-amd64.tar.gz"
+    sha256 "1645a27ba0e02218288eb9f8f2bb7dfc64f42e6bbb8edef8ab6af3c35308d96b"
+  end
 
   def install
     bin.install "typesense-server"
@@ -38,7 +44,7 @@ class TypesenseServerAT260 < Formula
     EOS
 
     on_macos do
-      if Hardware::CPU.intel? && MacOS.version < :ventura
+      if MacOS.version < :ventura
         msg = <<~EOS
           #{msg}
           *************************************************************************************************
@@ -46,16 +52,6 @@ class TypesenseServerAT260 < Formula
           *  For other macOS versions, please use the Docker installation method described here:
           *    https://typesense.org/docs/guide/install-typesense.html#docker
           *************************************************************************************************
-        EOS
-      elsif Hardware::CPU.arm?
-        msg = <<~EOS
-          #{msg}
-          ************************************************************************************************************
-          * NOTE: The macOS build of Typesense is only supported natively on Apple machines with Intel CPUs.
-          *  If you run this build on Apple M1/M2, macOS will use Rosetta which will affect Typesense's performance.
-          *  For Apple M1/M2 machines, please use the Docker installation method described here:
-          *     https://typesense.org/docs/guide/install-typesense.html#docker
-          ************************************************************************************************************
         EOS
       end
     end

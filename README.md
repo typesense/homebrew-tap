@@ -94,7 +94,8 @@ This section is only applicable if you're adding a new version to this tap.
 
 ### Add a new version
 
-1. Add new version to `scripts/generate_forumlae.rb` (at the top of the array if it's the latest version)
-2. Run `bundle install && bundle exec ruby scripts/generate_formulae.rb` to generate the formulae for all versions
-3. Run `brew style . --fix` (then make sure any linting fixes are applied to the template string, then regenerate the formula once again)
-4. Test locally `brew install ./Formula/typesense-server@26.0.rb --debug`
+1. Copy previous version to a new file called `./Formula/typesense-server@26.0.rb`
+2. Calculate SHA of ARM and x86_64 builds: `curl -sL https://dl.typesense.org/releases/26.0/typesense-server-26.0-darwin-<amd64|arm64>.tar.gz | shasum -a 256`
+3. Update the SHA and URLs in the SHA
+4. Run `brew style . --fix`
+5. Test locally `brew install ./Formula/typesense-server@26.0.rb --debug`
