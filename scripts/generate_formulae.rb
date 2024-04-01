@@ -4,6 +4,7 @@
 require "English"
 
 versions = %w[
+  26.0
   0.25.2
   0.25.1
   0.25.0
