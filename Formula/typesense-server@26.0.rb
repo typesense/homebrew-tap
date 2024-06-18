@@ -16,7 +16,7 @@ class TypesenseServerAT260 < Formula
     bin.install "typesense-server"
 
     # Create directories
-    [data_dir, config_dir, log_dir].each(&:mkpath)
+    [data_dir, config_dir, log_dir, analytics_dir].each(&:mkpath)
 
     # Create default config file
     config_file_contents = <<~EOF
@@ -26,6 +26,9 @@ class TypesenseServerAT260 < Formula
       api-key = xyz
       data-dir = #{data_dir}
       log-dir = #{log_dir}
+      enable-search-analytics = true
+      analytics-flush-interval = 60
+      analytics-dir = #{analytics_dir}
       enable-cors = true
     EOF
     system "echo '#{config_file_contents}' > #{buildpath/"typesense.ini"}"
@@ -73,6 +76,10 @@ class TypesenseServerAT260 < Formula
 
   def data_dir
     var/"lib/typesense"
+  end
+
+  def analytics_dir
+    var/"lib/typesense/analytics"
   end
 
   def log_dir
