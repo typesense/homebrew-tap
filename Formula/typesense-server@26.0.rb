@@ -38,12 +38,11 @@ class TypesenseServerAT260 < Formula
   def caveats
     msg = <<~EOS
       * The default admin API key is xyz
-        The default API port is 8108
-            You can change these and other configuration by editing #{config_dir/"typesense.ini"}
+      * The default API port is 8108
+      * Config file is at: #{config_dir/"typesense.ini"}
       * Logs are under: #{log_dir}
       * Data dir is under: #{data_dir}
-      * To test that Typesense is running, try
-            curl http://localhost:8108/health
+      * To test that Typesense is running, try running curl http://localhost:8108/health
     EOS
 
     on_macos do
