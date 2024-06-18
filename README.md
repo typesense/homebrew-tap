@@ -4,9 +4,9 @@ This repo contains Typesense's Homebrew Tap.
 
 ## Compatibility
 
-We only recommend using homebrew for macOS Ventura (13.x) or above, running on an Intel CPU.
+As of Typesense v26.0, we only recommend using homebrew for macOS Ventura (13.x) or above.
 
-For older versions of macOS running on an Intel CPU and for all versions of macOS running on Apple M1/M2 CPUs, we recommend using the [Docker](https://typesense.org/docs/guide/install-typesense.html#docker) or [Docker Compose](https://typesense.org/docs/guide/install-typesense.html#docker-compose) installation method for compatibility and performance reasons.
+For older versions of macOS, we recommend using the [Docker](https://typesense.org/docs/guide/install-typesense.html#docker) or [Docker Compose](https://typesense.org/docs/guide/install-typesense.html#docker-compose) installation method for compatibility and performance reasons.
 
 ## Installation
 
