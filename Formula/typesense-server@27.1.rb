@@ -1,15 +1,15 @@
-class TypesenseServerAT270 < Formula
+class TypesenseServerAT271 < Formula
   desc "Search Engine; Open Source, Lightning fast, In-Memory, Typo Tolerant"
   homepage "https://typesense.org"
-  version "27.0"
+  version "27.1"
   license "GPL-3.0"
 
   if Hardware::CPU.arm?
-    url "https://dl.typesense.org/releases/27.1/typesense-server-27.0-darwin-arm64.tar.gz"
+    url "https://dl.typesense.org/releases/27.1/typesense-server-27.1-darwin-arm64.tar.gz"
     sha256 "ef478f0a932f38ded3de46de7919a4a90809cc480d344d16ed5a5c6a9ccb177e"
   else
-    url "https://dl.typesense.org/releases/27.1/typesense-server-27.0-darwin-amd64.tar.gz"
-    sha256 "ede783ef04526627ee8de3f2003e03dfcac632437c1f1ed3bc15652ce5a13d24"
+    url "https://dl.typesense.org/releases/27.1/typesense-server-27.1-darwin-amd64.tar.gz"
+    sha256 "6bca78ffe7423b2c76fec961ca758983a32cc0c891f583f4d59aeb8e47c085e1"
   end
 
   def install
