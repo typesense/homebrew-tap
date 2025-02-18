@@ -19,7 +19,7 @@ brew install typesense/tap/typesense-server
 To install a specific version of Typesense:
 
 ```
-brew install typesense/tap/typesense-server@26.0
+brew install typesense/tap/typesense-server@28.0
 ```
 
 ## Documentation
@@ -94,8 +94,9 @@ This section is only applicable if you're adding a new version to this tap.
 
 ### Add a new version
 
-1. Copy previous version to a new file called `./Formula/typesense-server@26.0.rb`
-2. Calculate SHA of ARM and x86_64 builds: `curl -sL https://dl.typesense.org/releases/26.0/typesense-server-26.0-darwin-<amd64|arm64>.tar.gz | shasum -a 256`
-3. Update the SHA and URLs in the SHA
-4. Run `brew style . --fix`
-5. Test locally `brew install ./Formula/typesense-server@26.0.rb --debug`
+1. Copy previous version to a new file called `./Formula/typesense-server@28.0.rb`
+2. Calculate SHA of ARM and x86_64 builds: `curl -sL https://dl.typesense.org/releases/28.0/typesense-server-28.0-darwin-<amd64|arm64>.tar.gz | shasum -a 256`
+3. Update the SHA and URLs in the SHA, update the class name
+4. Run `cd Aliases; ln -sfn ../Formula/typesense-server@28.0.rb typesense-server`
+5. Run `brew style . --fix`
+6. Test locally `brew install ./Formula/typesense-server@28.0.rb --debug`
