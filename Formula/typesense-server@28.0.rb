@@ -9,7 +9,7 @@ class TypesenseServerAT280 < Formula
     sha256 "90e8cede4a249af697af9e707102946e8633cd349a17d61efad63f03884dbec6"
   else
     url "https://dl.typesense.org/releases/28.0/typesense-server-28.0-darwin-amd64.tar.gz"
-    sha256 "b89ccfa7576fa19c5a1adbb144228c02a33bfa97be7754b9add9c795c7c5157d"
+    sha256 "a3e89537913c7a69cd983ef60edaf3108daa7b9ec1bd7489c8904d0e0146b925"
   end
 
   def install
