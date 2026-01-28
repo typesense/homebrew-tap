@@ -94,9 +94,9 @@ This section is only applicable if you're adding a new version to this tap.
 
 ### Add a new version
 
-1. Copy previous version to a new file called `./Formula/typesense-server@30.0.rb`
-2. Calculate SHA of ARM and x86_64 builds: `curl -sL https://dl.typesense.org/releases/30.0/typesense-server-30.0-darwin-<amd64|arm64>.tar.gz | shasum -a 256`
+1. Copy previous version to a new file called `./Formula/typesense-server@30.1.rb`
+2. Calculate SHA of ARM and x86_64 builds: `curl -sL https://dl.typesense.org/releases/30.1/typesense-server-30.1-darwin-<amd64|arm64>.tar.gz | shasum -a 256`
 3. Update the SHA and URLs in the SHA, update the class name
-4. Run `cd Aliases; ln -sfn ../Formula/typesense-server@30.0.rb typesense-server`
+4. Run `cd Aliases; ln -sfn ../Formula/typesense-server@30.1.rb typesense-server`
 5. Run `brew style . --fix`
-6. Test locally `brew install ./Formula/typesense-server@30.0.rb --debug`
+6. Test locally `brew install ./Formula/typesense-server@30.1.rb --debug`
