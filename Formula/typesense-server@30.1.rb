@@ -5,10 +5,10 @@ class TypesenseServerAT301 < Formula
   license "GPL-3.0"
 
   if Hardware::CPU.arm?
-    url "https://dl.typesense.org/releases/30.0/typesense-server-30.0-darwin-arm64.tar.gz"
+    url "https://dl.typesense.org/releases/30.1/typesense-server-30.1-darwin-arm64.tar.gz"
     sha256 "dcbf09f30ecea7c3ff3245043611f6ec2eea87a6851b4462572825bb87e3be33"
   else
-    url "https://dl.typesense.org/releases/30.0/typesense-server-30.0-darwin-amd64.tar.gz"
+    url "https://dl.typesense.org/releases/30.1/typesense-server-30.1-darwin-amd64.tar.gz"
     sha256 "34fe199ed1462a7dc54418f360ac97a5265806a786298fb5863a2ea95f70d47c"
   end
 
